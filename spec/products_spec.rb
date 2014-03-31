@@ -19,5 +19,12 @@ feature 'it manages products' do
       fill_in 'add_product', with: 'Tennis balls'
       click_button 'Create Product'
     end
+
+    and_the 'User sees the product they entered on the homepage, they are not prompted to re-submit data if they refresh the page' do
+      within 'ol' do
+        expect(page).to have_content 'Tennis balls'
+      end
+      visit '/'
+    end
   end
 end
