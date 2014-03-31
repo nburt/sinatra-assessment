@@ -10,3 +10,5 @@ end
 def the(message)
   yield
 end
+
+alias and_the the
