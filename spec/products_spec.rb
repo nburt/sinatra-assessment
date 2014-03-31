@@ -10,5 +10,9 @@ feature 'it manages products' do
     within 'h1' do
       expect(page).to have_content 'Welcome'
     end
+
+    the 'user sees a link to add a product' do
+      click_link 'Add a Product'
+    end
   end
 end
